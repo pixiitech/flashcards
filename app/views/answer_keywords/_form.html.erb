@@ -1,0 +1,33 @@
+<%= form_for(@answer_keyword) do |f| %>
+  <% if @answer_keyword.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@answer_keyword.errors.count, "error") %> prohibited this answer_keyword from being saved:</h2>
+
+      <ul>
+      <% @answer_keyword.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :text %><br>
+    <%= f.text_field :text %>
+  </div>
+  <div class="field">
+    <%= f.label :case_sensitive %><br>
+    <%= f.check_box :case_sensitive %>
+  </div>
+  <div class="field">
+    <%= f.label :order %><br>
+    <%= f.number_field :order %>
+  </div>
+  <div class="field">
+    <%= f.label :question_id %><br>
+    <%= f.text_field :question_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

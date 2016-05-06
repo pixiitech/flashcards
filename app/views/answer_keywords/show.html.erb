@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @answer_keyword.text %>
+</p>
+
+<p>
+  <strong>Case sensitive:</strong>
+  <%= @answer_keyword.case_sensitive %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @answer_keyword.order %>
+</p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @answer_keyword.question %>
+</p>
+
+<%= link_to 'Edit', edit_answer_keyword_path(@answer_keyword) %> |
+<%= link_to 'Back', answer_keywords_path %>

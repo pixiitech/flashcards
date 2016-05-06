@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  text: MyString
+  case_sensitive: false
+  order: 1
+  question_id: 
+
+two:
+  text: MyString
+  case_sensitive: false
+  order: 1
+  question_id: 
