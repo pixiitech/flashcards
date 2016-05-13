@@ -13,6 +13,9 @@
         <br /><br /><br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <%= @question.answer %>
       </div>
+      <% AnswerKeyword.where(question: @question.id).each do |keyword| %>
+        <div class='answerkeyword' hidden='hidden'><%= keyword.text %></div>
+      <% end %>
     </div>
 
   	<%= image_tag "card" + rand(1..6).to_s + ".jpg", alt: @question.prompt, class: "question" %>
