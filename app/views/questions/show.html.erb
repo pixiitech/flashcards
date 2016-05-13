@@ -3,16 +3,32 @@
 <table class="question">
   <tr><td>
   <div>
-	<div class="prompt">
-			<br /><br /><br /><br /><br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     <%= @question.prompt %>
-  </div>
-	<%= image_tag "card" + rand(1..6).to_s + ".jpg", alt: @question.prompt, class: "question" %>
-	</div>
-	</td></tr>
-</table>
+  	<div class="prompt">
+  			<br /><br /><br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <%= @question.prompt %>
+      <div class='status' hidden='hidden'>
+        
+      </div>
+      <div class='answer' hidden='hidden'>
+        <br /><br /><br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <%= @question.answer %>
+      </div>
+    </div>
 
-<%= link_to "Next Question", questions_path %>
+  	<%= image_tag "card" + rand(1..6).to_s + ".jpg", alt: @question.prompt, class: "question" %>
+	</div>
+	</td>
+  </tr>
+  <tr>
+    <td>
+      <h4>Your answer:</h4>
+      <input type='text' name='answer' id='answerbox' size='40' /><br />
+      <button name='submit' id='submitbutton'>Submit!</button>
+    </td>
+  </tr>
+</table>
+<% rand_q = Question.all.shuffle.first %>
+<%= link_to "Next Question", rand_q %>
 <p>
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>

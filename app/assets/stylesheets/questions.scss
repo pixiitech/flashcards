@@ -6,8 +6,6 @@ table.question {
 	text-align: center;
 }
 
-
-
 img.question {
 	height: 450px;
 	width: 750px;
@@ -21,5 +19,16 @@ div.prompt {
 	font-weight: bold;
 	font-family: Helvetica;
 	color: #5555ff;
-	position: absolute
+	position: absolute;
+	line-height: 25px;
+}
+
+div.answer {
+	width: 50%;
+	text-align: center;
+	margin: auto;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: Helvetica;
+	color: #559955;
 }
