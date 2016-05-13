@@ -26,12 +26,12 @@
     <td>
       <h4>Your answer:</h4>
       <input type='text' name='answer' id='answerbox' size='40' /><br />
-      <button name='submit' id='submitbutton'>Submit!</button>
+      <button name='submit' id='submitbutton'>Submit!</button><br />
+      <% rand_q = Question.all.shuffle.first %>
+      <%= link_to "Next Question", rand_q, class: "largelink" %>
     </td>
   </tr>
 </table>
-<% rand_q = Question.all.shuffle.first %>
-<%= link_to "Next Question", rand_q %>
 <p>
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>

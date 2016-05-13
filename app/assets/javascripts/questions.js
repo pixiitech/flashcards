@@ -2,6 +2,7 @@
 // All this logic will automatically be available in application.js.
 // You can use CoffeeScript in this file: http://coffeescript.org/
 
+//Returns true if provided answer is correct, false if not
 function correctAnswer(response) {
 	keys = $(".answerkeyword");
 	for (var i = 0; i < keys.length; i++) {
@@ -12,16 +13,28 @@ function correctAnswer(response) {
   	return false;
 }
 
+//Answer submit function
+function submitAnswer() {
+	$(".status").removeAttr("hidden");
+	if (correctAnswer($("#answerbox").val())) {
+		$(".status").text("Correct!");
+	}
+	else {
+		$(".status").text("Wrong Answer.");
+	}
+	$(".answer").fadeIn(1000);
+}
+
+//Adds event listeners
+//namely, for submit button click
 function loadPageHandler() {
 	$("#submitbutton").on("click", function(){
-		$(".status").removeAttr("hidden");
-		if (correctAnswer($("#answerbox").val())) {
-			$(".status").text("Correct!");
+		submitAnswer();
+	});
+	$("#answerbox").on("keypress", function(e){
+		if (e.which==13) {
+			submitAnswer();
 		}
-		else {
-			$(".status").text("Wrong Answer.");
-		}
-		$(".answer").fadeIn(1000);
 	});
 }
 
